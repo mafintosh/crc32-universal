@@ -49,9 +49,9 @@ jobs:
         run: echo ::set-output name=VERSION::$(git describe --tags)
       - name: Compress builds
         run: |
-          tar --create --verbose --file="./${{ steps.get_version.outputs.VERSION }}-windows-all.tar" --directory "native/prebuilds/windows-latest" .
-          tar --create --verbose --file="./${{ steps.get_version.outputs.VERSION }}-linux-x86.tar" --directory "native/prebuilds/ubuntu-16.04" .
-          tar --create --verbose --file="./${{ steps.get_version.outputs.VERSION }}-osx-x86.tar" --directory "native/prebuilds/macos-latest" .
+          tar --create --verbose --file="./${{ steps.get_version.outputs.VERSION }}-windows-all.tar" --directory "prebuilds/windows-latest" .
+          tar --create --verbose --file="./${{ steps.get_version.outputs.VERSION }}-linux-x86.tar" --directory "prebuilds/ubuntu-16.04" .
+          tar --create --verbose --file="./${{ steps.get_version.outputs.VERSION }}-osx-x86.tar" --directory "prebuilds/macos-latest" .
       - name: Upload x86 build
         uses: actions/upload-release-asset@v1
         env:
