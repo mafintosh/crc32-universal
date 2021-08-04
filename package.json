@@ -1,0 +1,30 @@
+{
+  "name": "crc32-universal",
+  "version": "0.0.0",
+  "description": "CRC32 slice-by-16 implementation in JS with an optional native binding to speed it up even futher",
+  "main": "index.js",
+  "browser": "./browser.js",
+  "dependencies": {
+    "node-gyp-build": "^4.2.3"
+  },
+  "devDependencies": {
+    "napi-macros": "^2.0.0",
+    "prebuildify": "^4.1.2",
+    "tape": "^5.3.0"
+  },
+  "scripts": {
+    "prebuild": "prebuildify --napi --strip --cwd=native",
+    "prebuild-ia32": "prebuildify --napi --strip --cwd=native --arch=ia32",
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mafintosh/crc32-universal.git"
+  },
+  "author": "Mathias Buus (@mafintosh)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafintosh/crc32-universal/issues"
+  },
+  "homepage": "https://github.com/mafintosh/crc32-universal"
+}
