@@ -1,4 +1,4 @@
-const crc32js = require('./browser')
+const crc32js = require('./crc32.js')
 
 try {
   const crc32native = require('node-gyp-build')(__dirname).turbo_crc32
